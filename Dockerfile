@@ -146,5 +146,5 @@ RUN rm -rf /etc/service/wsgi && \
     ln -s "${KPI_SRC_DIR}/docker/run_celery_sync_kobocat_xforms.bash" /etc/service/celery_sync_kobocat_xforms/run
 
 EXPOSE 8000
-
+RUN ["chmod", "+x", "${KPI_SRC_DIR}/docker/init.bash"]
 CMD ["/bin/bash", "-c", "sudo exec ${KPI_SRC_DIR}/docker/init.bash"]
