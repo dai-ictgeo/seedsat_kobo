@@ -230,7 +230,7 @@ export class ProjectDownloads extends React.Component {
     let dvcount = this.props.asset.deployed_versions.count;
     var docTitle = this.props.asset.name || t('Untitled');
     return (
-      <DocumentTitle title={`${docTitle} | KoboToolbox`}>
+      <DocumentTitle title={`${docTitle} | SeedSAT`}>
         <bem.FormView m='form-data-downloads'>
           <bem.FormView__row>
               <bem.FormView__cell m='label'>

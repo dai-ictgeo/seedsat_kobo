@@ -23,7 +23,7 @@ export default class RESTServices extends React.Component {
     );
 
     return (
-      <DocumentTitle title={`${docTitle} | KoboToolbox`}>
+      <DocumentTitle title={`${docTitle} | SeedSAT`}>
         <React.Fragment>
           {!hasAccess &&
             <ui.AccessDeniedMessage/>
