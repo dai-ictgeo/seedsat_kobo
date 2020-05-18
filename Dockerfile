@@ -131,7 +131,6 @@ ENV C_FORCE_ROOT="true"
 
 # Do it even if we don't why yet.
 RUN useradd -s /bin/false -m wsgi
-RUN ["chmod", "+x", "${KPI_SRC_DIR}/docker/init.bash"]
 # Prepare for execution.
 RUN rm -rf /etc/service/wsgi && \
     # Remove getty* services
