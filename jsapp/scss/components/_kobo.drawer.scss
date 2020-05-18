@@ -1,0 +1,109 @@
+// drawer (sidebar)
+
+$drawer-icons-width: 58px;
+
+.k-drawer {
+  height: calc(100% - 66px);
+  top: 65px;
+  width: 270px;
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.mdl-layout__content {
+  margin-left: 270px;
+}
+
+.k-drawer__primary-icons {
+  display: flex;
+  flex-direction: column;
+  width: $drawer-icons-width;
+  height: 100%;
+  border-right: 1px solid #d9dadd;
+}
+
+.k-drawer__link {
+  font-size: 42px;
+  text-align: center;
+  color: $cool-silver;
+  padding: 0;
+  border-left: 3px solid transparent;
+
+  &:first-child {
+    margin-top: 20px;
+  }
+
+  &.active {
+    color: $cool-green;
+    border-left: 3px solid $cool-green;
+  }
+}
+
+.k-drawer__secondary-icons {
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  width: $drawer-icons-width;
+
+  .k-drawer__link {
+    padding: 0;
+    margin-bottom: 5px;
+    display: block;
+    text-align: center;
+    font-weight: normal;
+    position: relative;
+    color: $cool-silver;
+
+    &:hover {
+      color: $cool-blue;
+    }
+
+    i {
+      font-size: 38px;
+    }
+  }
+}
+
+.k-drawer__sidebar {
+  width: calc(100% - #{$drawer-icons-width});
+  height: 100%;
+  padding: 20px 14px;
+
+  .form-sidebar__wrapper,
+  .collections-wrapper {
+    height: 100%;
+  }
+
+  button.mdl-button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .k-drawer {
+    position: fixed;
+    z-index: 1050; // must be over leaflet
+    left: -274px;
+    transition: left 0.5s;
+    background-color: #fff;
+
+    @include box-shadow;
+  }
+
+  .page-wrapper--fixed-drawer .k-drawer {
+    left: 0;
+    width: 340px;
+  }
+
+  .mdl-layout__content {
+    margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  .mdl-layout__content {
+    margin-left: 18px;
+  }
+}
