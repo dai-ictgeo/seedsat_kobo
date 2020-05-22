@@ -8,7 +8,6 @@ from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import FieldError
 from rest_framework import filters
 
-from kpi.utils.query_parser import parse, ParseError
 from .models import Asset, ObjectPermission
 from .models.object_permission import (
     get_objects_for_user,
@@ -16,13 +15,14 @@ from .models.object_permission import (
     get_models_with_object_permissions,
 )
 
+from kpi.utils.query_parser.query_parser import parse, ParseError
+
 
 class AssetOwnerFilterBackend(filters.BaseFilterBackend):
     """
     For use with nested models of Asset.
     Restricts access to items that are owned by the current user
     """
-
     def filter_queryset(self, request, queryset, view):
         fields = {"asset__owner": request.user}
         return queryset.filter(**fields)

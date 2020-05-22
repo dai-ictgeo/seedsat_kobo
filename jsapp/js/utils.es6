@@ -284,7 +284,7 @@ export function t(str) {
 }
 
 
-const originalSupportEmail = 'help@seedsat.org';
+const originalSupportEmail = 'help@kobotoolbox.org';
 
 // use this utility function to replace hardcoded email in transifex translations
 export function replaceSupportEmail(str) {

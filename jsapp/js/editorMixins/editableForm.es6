@@ -807,7 +807,7 @@ export default assign({
     var docTitle = this.state.name || t('Untitled');
 
     return (
-      <DocumentTitle title={`${docTitle} | SeedSAT`}>
+      <DocumentTitle title={`${docTitle} | KoboToolbox`}>
         <ui.Panel m={['transparent', 'fixed']}>
           {this.renderAside()}
 

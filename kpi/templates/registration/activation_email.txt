@@ -1,7 +1,7 @@
 {% load i18n %}
-{% trans "Thanks for signing up with SeedSAT Collect!" %}
+{% trans "Thanks for signing up with KoBoToolbox!" %}
 
-{% trans "Confirming your account will give you full access to SeedSAT Collect applications. Please visit the following url to finish activation of your new account." %}
+{% trans "Confirming your account will give you full access to KoBoToolbox applications. Please visit the following url to finish activation of your new account." %}
 
 {{ user }}
 
@@ -10,4 +10,4 @@
 {% trans "Please visit http://help.kobotoolbox.org to find information on how to get started. There you can also post questions to the community (recommended) or to us directly." %}
 
 {% trans "Best," %}
-SeedSAT
+KoBoToolbox

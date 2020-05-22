@@ -1,2 +1,2 @@
 {% load i18n %}
-{% trans "Activate your SeedSAT Collect Account" %}
+{% trans "Activate your KoBoToolbox Account" %}

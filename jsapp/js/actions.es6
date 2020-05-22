@@ -413,7 +413,7 @@ actions.resources.deployAsset.failed.listen(function(data, redeployment){
       msg = t('please check your connection and try again.');
     }
     failure_message = `
-      <p>${replaceSupportEmail(t('if this problem persists, contact help@seedsat.org'))}</p>
+      <p>${replaceSupportEmail(t('if this problem persists, contact help@kobotoolbox.org'))}</p>
       <p>${msg}</p>
     `;
   } else if(!!data.responseJSON.xform_id_string){
@@ -422,7 +422,7 @@ actions.resources.deployAsset.failed.listen(function(data, redeployment){
     failure_message = `
       <p>${t('your form id was not valid:')}</p>
       <p><pre>${data.responseJSON.xform_id_string}</pre></p>
-      <p>${replaceSupportEmail(t('if this problem persists, contact help@seedsat.org'))}</p>
+      <p>${replaceSupportEmail(t('if this problem persists, contact help@kobotoolbox.org'))}</p>
     `;
   } else if(!!data.responseJSON.detail) {
     failure_message = `

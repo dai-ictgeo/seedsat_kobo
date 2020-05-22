@@ -46,17 +46,12 @@ export class FormSubScreens extends React.Component {
     if (!this.state.permissions)
       return false;
 
+    if (this.props.location.pathname != `/forms/${this.state.uid}/settings` && !permAccess) {
+      return (<ui.AccessDeniedMessage/>);
+    }
+
     if (this.props.location.pathname == `/forms/${this.state.uid}/settings` &&
         !this.userCan('change_asset', this.state)) {
-      return (<ui.AccessDeniedMessage/>);
-    }
-
-    if (this.props.location.pathname == `/forms/${this.state.uid}/settings/rest` && !permAccess) {
-      return (<ui.AccessDeniedMessage/>);
-    }
-
-    //TODO:Remove owner only access to settings/media after we remove KC iframe: https://github.com/kobotoolbox/kpi/issues/2647#issuecomment-624301693
-    if (this.props.location.pathname == `/forms/${this.state.uid}/settings/media` && !this.userIsOwner(this.state)) {
       return (<ui.AccessDeniedMessage/>);
     }
 
@@ -109,7 +104,7 @@ export class FormSubScreens extends React.Component {
     var docTitle = this.state.name || t('Untitled');
 
     return (
-        <DocumentTitle title={`${docTitle} | SeedSAT`}>
+        <DocumentTitle title={`${docTitle} | KoboToolbox`}>
           <bem.FormView>
             <bem.FormView__cell m='iframe'>
               <iframe src={iframeUrl} />
@@ -121,7 +116,7 @@ export class FormSubScreens extends React.Component {
   renderSettingsEditor() {
     var docTitle = this.state.name || t('Untitled');
     return (
-        <DocumentTitle title={`${docTitle} | SeedSAT`}>
+        <DocumentTitle title={`${docTitle} | KoboToolbox`}>
           <bem.FormView m='form-settings'>
             <ProjectSettings
               context={PROJECT_SETTINGS_CONTEXTS.EXISTING}
@@ -134,7 +129,7 @@ export class FormSubScreens extends React.Component {
   renderProjectDownloads() {
     var docTitle = this.state.name || t('Untitled');
     return (
-      <DocumentTitle title={`${docTitle} | SeedSAT`}>
+      <DocumentTitle title={`${docTitle} | KoboToolbox`}>
         <ProjectDownloads asset={this.state} />
       </DocumentTitle>
     );
