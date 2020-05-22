@@ -248,7 +248,7 @@ export class AccountSettings extends React.Component {
     };
 
     return (
-      <DocumentTitle title={`${accountName} | KoboToolbox`}>
+      <DocumentTitle title={`${accountName} | SeedSAT`}>
       <ui.Panel>
         <bem.AccountSettings>
           <bem.AccountSettings__actions>
