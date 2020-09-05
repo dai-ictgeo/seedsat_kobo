@@ -37,7 +37,7 @@
     "mocha": "^5.2.0",
     "mocha-chrome": "^2.2.0",
     "moment": "^2.10.3",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "object-assign": "^4.1.1",
     "postcss": "^7.0.26",
     "postcss-loader": "^3.0.0",
